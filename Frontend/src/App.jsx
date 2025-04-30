@@ -29,12 +29,20 @@ const App = () => {
     let socketio;
     if (user) {
       fetchBookmarks()
-      socketio = io("http://localhost:8000", {
+      const socketURL =
+        import.meta.env.MODE === "development"
+          ? "http://localhost:8000"
+          : "https://instagramclone-teal-sigma.vercel.app";
+
+      socketio = io(socketURL, {
         query: {
           userId: user?._id,
         },
         transports: ["websocket"],
+        secure: true,
+        withCredentials: true,
       });
+
 
       dispatch(setSocket(socketio));
 
