@@ -1,0 +1,25 @@
+# dependencies
+/node_modules
+
+# environment variables
+.env
+
+# logs
+logs
+*.log
+npm-debug.log*
+
+# runtime files
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# compiled output
+/dist
+/build
+
+# IDEs and OS
+.DS_Store
+.vscode
+.idea

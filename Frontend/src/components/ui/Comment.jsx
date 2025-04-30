@@ -1,0 +1,21 @@
+import React from "react";
+import { Avatar, AvatarFallback, AvatarImage } from "./avatar";
+
+const Comment = ({ comment }) => {
+  return (
+    <div className="my-2">
+      <div className="flex gap-3 items-center justify-start ">
+        <Avatar className="w-8 h-8">
+          <AvatarImage src={comment?.author?.profilePicture}></AvatarImage>
+          <AvatarFallback>CN</AvatarFallback>
+        </Avatar>
+        <h1 className="font-bold text-sm">
+          {comment?.author?.username}{" "}
+          <span className="font-normal text-sm pl-1 ">{comment?.text}</span>
+        </h1>
+      </div>
+    </div>
+  );
+};
+
+export default Comment;
