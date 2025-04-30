@@ -30,7 +30,6 @@ import userRoutes from "./routes/user.routes.js"
 import postRoutes from "./routes/post.routes.js"
 import messageRoutes from "./routes/message.routes.js"
 import limiter from "./middlewares/rateLimit.js";
-import { error } from "console";
 app.use(limiter)
 
 app.use("/api/v1/user",userRoutes)
