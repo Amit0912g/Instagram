@@ -26,7 +26,7 @@ const corsOptions={
   methods: ["GET", "POST", "PUT", "DELETE"], 
   allowedHeaders: ["Content-Type", "Authorization"],
 }
-app.use(cors(corsOptions))
+app.options("*", cors(corsOptions));
 
 import userRoutes from "./routes/user.routes.js"
 import postRoutes from "./routes/post.routes.js"
